@@ -1,0 +1,10 @@
+@media screen and (max-width: 570px) {
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(1, 100%);
+    }
+
+    .main-container {
+        display: block;
+    }
+}

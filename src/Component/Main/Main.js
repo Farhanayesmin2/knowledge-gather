@@ -1,10 +1,15 @@
 
 import React, { useEffect, useState } from 'react';
 import Card from '../Card/Card';
-import Info from '../Info/Info';
+import Bookmark from '../Bookmark/Bookmark';
+import './Main.css';
 
 
 const Main = () => {
+ 
+     
+    
+
     const [cards, setCards] = useState([]);
        useEffect(() => {
         fetch('items.json')
@@ -19,8 +24,10 @@ const Main = () => {
         newItems  = [...items, selectedProduct];
         
         setItems(newItems);
-        console.log(newItems);
+        // console.log(newItems);
     }
+    
+   
     
     return (
         <div className=' container mx-auto'>
@@ -35,13 +42,23 @@ const Main = () => {
                 {
                     cards.map(card => <Card
                         card={card}
+                       
                         handleAddToInfo={handleAddToInfo}
                         key={card.id}></Card>)
-                    }
+                            
+                        }
+                         
                  </div>
                 </div>
                 
                
+            <div className="info-container ms-0 bg-yellow-50 col-span-3 md:col-span-3 sm:col-span-3  p-5 font-serif w-[100%] ">
+                  <div className='sm:grid-cols-1 '>
+  
+                    <Bookmark items={items} ></Bookmark>
+                    </div>
+            
+            </div>
             </div>
             </div>
           

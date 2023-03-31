@@ -1,10 +1,15 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { BsBookmark, IconName } from "react-icons/bs";
 
 const Card = (props) => {
+  
+
     const { card ,handleAddToInfo} = props;
-    const { name, date, authorname, title,coverimg,authorimg,readtime } = card;
+    const { name, date, authorname, title, coverimg, authorimg, readtime } = card;
+
+
+ console.log(handleAddToInfo); 
    
     return (
        
@@ -23,7 +28,8 @@ const Card = (props) => {
                             <span className='flex-wrap text-gray-500 '>{date}</span>
                             </span> 
                         </div>
-                   <div className="flex items-center mx-auto ps-96"><span className="flex items-center ps-4"> {readtime} min read  <BsBookmark className='ms-3'></BsBookmark></span></div>
+                        <div className="flex items-center mx-auto ps-96"><span className="flex items-center ps-4">
+                            {readtime} min read  <button onClick={() =>  handleAddToInfo(card)}> <BsBookmark className='ms-3'></BsBookmark></button></span></div>
                     </div>
                     <h2 className="card-title text-violet-700"></h2>
                     <h3 className='font-sherif text-3xl'>{title}</h3>
@@ -31,7 +37,7 @@ const Card = (props) => {
                     <p className='font-semibold text-green-500'>Time Required: s</p>
                  
      <div className="card-actions">
-        <button onClick={() => handleAddToInfo(card)} className="underline text-xl text-purple-500  hover:text-red-500">Mark as read</button>
+        <button  className="underline text-xl text-purple-500  hover:text-red-500">Mark as read</button>
       </div>
   </div>
                 
