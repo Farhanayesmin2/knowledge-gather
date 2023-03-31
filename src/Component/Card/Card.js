@@ -14,21 +14,25 @@ const Card = (props) => {
     <img src={coverimg} alt="cover" className="  rounded-lg " />
   </figure>
                 <div className="card-body text-start ">
-                    <div className='flex justify-end'>
- <img src={authorimg} alt="author" className="rounded-full btn-circle" />
-                    <span className=' pt-3 text-gray-500 ps-4'>{authorname }</span>
-
+                    <div className='flex items-center justify-end'>
+                        <div className=' flex items-center '>
+                          <img src={authorimg} alt="author" className="rounded-full btn-circle" />
+                            <span className='text-sm font-semibold ps-2 '>{authorname}
+                            <br></br>
+                            
+                            <span className='flex-wrap text-gray-500 '>{date}</span>
+                            </span> 
+                        </div>
                    <div className="flex items-center mx-auto ps-96"><span className="flex items-center ps-4"> {readtime} min read  <BsBookmark className='ms-3'></BsBookmark></span></div>
                     </div>
-              
-                   
                     <h2 className="card-title text-violet-700"></h2>
-                    <h3 className=''>Calorie: {title}</h3>
+                    <h3 className='font-sherif text-3xl'>{title}</h3>
+                    <span className=' text-gray-400 '>#programming #beginners</span>
                     <p className='font-semibold text-green-500'>Time Required: s</p>
                  
-    <div className="card-actions">
-      <button onClick={() => handleAddToInfo(card)} className="btn bg-violet-800  items-center w-full hover:bg-green-800">Add To List</button>
-    </div>
+     <div className="card-actions">
+        <button onClick={() => handleAddToInfo(card)} className="underline text-xl text-purple-500  hover:text-red-500">Mark as read</button>
+      </div>
   </div>
                 
                 </div>
