@@ -4,7 +4,7 @@ import { GiBowTieRibbon } from "react-icons/gi";
 const Header = () => {
     return (
         <div>
-            <div className="navbar bg-yellow-50  text-indigo-900 lg:px-14  shadow-md ">
+            <div className="navbar bg-yellow-50  text-indigo-900 lg:px-14  shadow-md  w-[100%]">
   <div className="navbar-start">
                     <div className="dropdown">
                             

@@ -20,14 +20,19 @@ const Bookmark = (props) => {
   
     return (
         <div>
+            <div className='border-2 hover:border-purple-900 hover:border-2 px-1 w-76 text-blue-500 mb-5 p-o'>
+                 <h1 className='font-bold text-2xl'>Spent time on read : {total} min</h1>
+           </div>
            
-            <h1>{items.length }</h1>
-       
-<h1>Total: {total} </h1>
-             
-          {/* <Info></Info> */}
+            <div className='text-start'>
+            <h1 className='font-bold font-sherif text-xl'>Bookmarked Blog:  {items.length }</h1>       
+       </div>
 
-           {
+           
+            {/* <Info></Info> */}
+            <div className=' '>
+                <h1 className='text-semibold text-gray-950 mb-3'>
+   {
 
                 items.map(item => <Info
                         
@@ -37,7 +42,11 @@ const Bookmark = (props) => {
                     
 
                         </Info>)
-              }     
+                    }   
+                    </h1>
+            </div>
+
+     
                             
          
       

@@ -45,7 +45,7 @@ const Main = () => {
 
                 
                 <div className="card-container  col-span-9  ">
-          <div className='grid  gap-4 grid-cols-1 '>
+          <div className='grid  gap-4 grid-cols-1 w-[100%] '>
                 {
                     cards.map(card => <Card
                         card={card}

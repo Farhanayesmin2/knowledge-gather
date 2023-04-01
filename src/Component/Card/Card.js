@@ -27,22 +27,22 @@ const Card = (props) => {
        
         <div  >
   
-            <div className="card  bg-base-100 shadow-xl font-serif border-white border-1  w-[900px] hover:border-indigo-600 border-2">
+            <div className="card  bg-base-100 shadow-xl font-serif border-white border-1 lg:w-[900px] hover:border-indigo-600 border-2">
   <figure className="px-10 pt-10">
     <img src={coverimg} alt="cover" className="  rounded-lg " />
   </figure>
-                <div className="card-body text-start ">
-                    <div className='flex items-center justify-end'>
+                <div className="card-body text-start lg:w-[100%] ">
+                    <div className='flex items-center'>
                         <div className=' flex items-center '>
-                          <img src={authorimg} alt="author" className="rounded-full btn-circle" />
-                            <span className='text-sm font-semibold ps-2 '>{authorname}
+                          <img src={authorimg} alt="author" className=" sm:ps-5 lg:ps-0 rounded-full btn-circle" />
+                            <span className='lg:text-sm lg:font-semibold lg:ps-2 '>{authorname}
                             <br></br>
                             
                             <span className='flex-wrap text-gray-500 '>{date}</span>
                             </span> 
                         </div>
-                        <div className="flex items-center mx-auto ps-96"><span className="flex items-center ps-4">
-                            {readtime} min read  <button onClick={() =>  handleAddToInfo(card)}> <BsBookmark className='ms-3'></BsBookmark></button></span></div>
+                        <div className="flex items-center mx-auto lg:ps-96"><span className="flex items-center lg:ps-4 lg:pe-0">
+                            {readtime} min read  <button onClick={() =>  handleAddToInfo(card)}> <BsBookmark className='lg:ms-3'></BsBookmark></button></span></div>
                     </div>
                     <h2 className="card-title text-violet-700"></h2>
                     <h3 className='font-sherif text-3xl'>{title}</h3>
