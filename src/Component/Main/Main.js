@@ -3,12 +3,17 @@ import React, { useEffect, useState } from 'react';
 import Card from '../Card/Card';
 import Bookmark from '../Bookmark/Bookmark';
 import './Main.css';
+import Info from '../Info/Info';
 
 
 const Main = () => {
  
-     
-    
+
+ const [totalReadTime, setTotalReadTime] = useState(0);
+
+  function handleClick(item) {
+    setTotalReadTime(totalReadTime + item.readtime);
+  }
 
     const [cards, setCards] = useState([]);
        useEffect(() => {
@@ -42,7 +47,8 @@ const Main = () => {
                 {
                     cards.map(card => <Card
                         card={card}
-                       
+                    
+                       handleClick = {handleClick}
                         handleAddToInfo={handleAddToInfo}
                         key={card.id}></Card>)
                             
@@ -55,7 +61,14 @@ const Main = () => {
             <div className="info-container ms-0 bg-yellow-50 col-span-3 md:col-span-3 sm:col-span-3  p-5 font-serif w-[100%] ">
                   <div className='sm:grid-cols-1 '>
   
-                    <Bookmark items={items} ></Bookmark>
+                        {/* <Info items={items}
+                    // readtimes = {readtimes}
+                        ></Info> */}
+                        <Bookmark total={totalReadTime}></Bookmark>
+
+
+
+
                     </div>
             
             </div>
