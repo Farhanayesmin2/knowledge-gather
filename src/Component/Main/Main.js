@@ -20,7 +20,9 @@ const Main = () => {
         fetch('items.json')
             .then(res => res.json())
         .then(data => setCards(data))
-    }, [])
+       }, [])
+    
+   
     
     const [items, setItems] = useState([]);
 
@@ -64,7 +66,10 @@ const Main = () => {
                         {/* <Info items={items}
                     // readtimes = {readtimes}
                         ></Info> */}
-                        <Bookmark total={totalReadTime}></Bookmark>
+                        <Bookmark total={totalReadTime}
+                        items = {items}
+                        
+                        ></Bookmark>
 
 
 
