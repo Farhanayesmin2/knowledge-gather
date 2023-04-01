@@ -1,6 +1,7 @@
 
-import React, { useState } from 'react';
-  let time = 0;
+import React from 'react';
+import Info from '../Info/Info';
+
 
 const Bookmark = ({items}) => {
    
@@ -9,8 +10,7 @@ const Bookmark = ({items}) => {
         blog = blog + items.length;
         
     
-console.log(items.length);
-      
+  
     return (
         <div>
           <h1 className='text-2xl text-center font-semibold font-serif text-violet-900'>Spent time on read: min</h1>
@@ -19,8 +19,14 @@ console.log(items.length);
                 <div>
                     <h1>Bookmark Blogs: {blog} </h1>
                
-        <h1></h1>
-            
+                    <h1></h1>
+             {
+                    items.map(item => <Info
+                        item={item}
+                     
+                        key={item.id}></Info>)
+                            
+                        }
                    
 </div>
 </div>

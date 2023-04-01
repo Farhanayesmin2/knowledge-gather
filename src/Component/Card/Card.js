@@ -9,7 +9,8 @@ const Card = (props) => {
     const { name, date, authorname, title, coverimg, authorimg, readtime } = card;
 
 
- console.log(handleAddToInfo); 
+    console.log(handleAddToInfo); 
+    
    
     return (
        
@@ -37,7 +38,7 @@ const Card = (props) => {
                     <p className='font-semibold text-green-500'>Time Required: s</p>
                  
      <div className="card-actions">
-        <button  className="underline text-xl text-purple-500  hover:text-red-500">Mark as read</button>
+        <button  onClick={(readtime)} className="underline text-xl text-purple-500  hover:text-red-500">Mark as read</button>
       </div>
   </div>
                 
