@@ -3,7 +3,9 @@ import React, { useEffect, useState } from 'react';
 import Card from '../Card/Card';
 import Bookmark from '../Bookmark/Bookmark';
 import './Main.css';
-import Info from '../Info/Info';
+
+  import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 const Main = () => {
@@ -25,13 +27,29 @@ const Main = () => {
    
     
     const [items, setItems] = useState([]);
-
+  
     const handleAddToInfo = (selectedProduct) => {
-        let newItems = [];
-        newItems  = [...items, selectedProduct];
+      let newItems = [];
+        // newItems  = [...items, selectedProduct];
         
-        setItems(newItems);
-        // console.log(newItems);
+        // setItems(newItems);
+        // // console.log(newItems);
+        
+        const itemExists = items.find((item) => item.id === selectedProduct.id);
+        
+
+        if (itemExists) {
+       const newItems = [...items, selectedProduct];
+    setItems(newItems);
+    toast.error("You already Bookmarked");
+  } else {
+    const newItems = [...items, selectedProduct];
+    setItems(newItems);
+    toast.success("Added Bookmark item.");
+  }
+
+
+
     }
     
    
@@ -72,7 +90,7 @@ const Main = () => {
                         ></Bookmark>
 
 
-
+   <ToastContainer />
 
                     </div>
             

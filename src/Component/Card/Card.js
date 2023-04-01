@@ -11,16 +11,16 @@ const Card = (props) => {
   
 
     const { card ,handleAddToInfo,handleClick} = props;
-    const { name, date, authorname, title, coverimg, authorimg, readtime } = card;
+    const {  date, authorname, title, coverimg, authorimg, readtime } = card;
 
-//    const [readtimes, setReadtime] = useState(0);
 
-//   function handleClick(card) {
-//     setReadtime(prevReadtime => prevReadtime + readtime);
-//   }
+const handleClicks = (id) => {
+    const selectedProduct = id;
+   handleAddToInfo(selectedProduct);
+  };
 
-   
-  
+
+    
 
    
     return (
@@ -42,7 +42,7 @@ const Card = (props) => {
                             </span> 
                         </div>
                         <div className="flex items-center mx-auto lg:ps-96"><span className="flex items-center lg:ps-4 lg:pe-0">
-                            {readtime} min read  <button onClick={() =>  handleAddToInfo(card)}> <BsBookmark className='lg:ms-3'></BsBookmark></button></span></div>
+                            {readtime} min read  <button onClick={() =>  handleClicks(card)}> <BsBookmark className='lg:ms-3'></BsBookmark></button></span></div>
                     </div>
                     <h2 className="card-title text-violet-700"></h2>
                     <h3 className='font-sherif text-3xl'>{title}</h3>
